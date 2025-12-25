@@ -1,10 +1,21 @@
 export default function FooterSection() {
   return (
-    <footer className="w-full bg-white pt-16 pb-24 border-t border-gray-200">
-      <div className="max-w-[1300px] mx-auto px-8">
+    <footer
+      className="
+        w-full bg-[#F7F7F7]
+        pt-16
+        pb-32    
+        border-t border-gray-200
+      "
+    >
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-8">
 
-        {/* Top small disclaimer */}
-        <p className="text-[13px] text-gray-600 leading-relaxed max-w-[900px]">
+        <p
+          className="
+            text-[13px] text-gray-600 leading-relaxed
+            max-w-[900px] mb-12
+          "
+        >
           Hosts on the Co-Host Network typically have high ratings, low cancellation rates,
           and established Airbnb hosting experience. Ratings are based on guest reviews for
           listings they host or co-host and may not represent the co-host’s unique services.
@@ -14,13 +25,15 @@ export default function FooterSection() {
           <span className="underline cursor-pointer">Learn more.</span>
         </p>
 
-        {/* Links section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-14 mt-16">
-
-          {/* Column 1 */}
+        <div
+          className="
+            grid grid-cols-1 md:grid-cols-3
+            gap-10 sm:gap-14
+          "
+        >
           <div>
-            <h3 className="font-semibold text-[16px] text-gray-800 mb-4">Support</h3>
-            <ul className="space-y-3 text-[15px] text-gray-700">
+            <h3 className="font-semibold text-[15px] mb-3 text-gray-800">Support</h3>
+            <ul className="space-y-2.5 text-[14px] text-gray-700">
               <li className="hover:underline cursor-pointer">Help Center</li>
               <li className="hover:underline cursor-pointer">Get help with a safety issue</li>
               <li className="hover:underline cursor-pointer">AirCover</li>
@@ -32,10 +45,9 @@ export default function FooterSection() {
             </ul>
           </div>
 
-          {/* Column 2 */}
           <div>
-            <h3 className="font-semibold text-[16px] text-gray-800 mb-4">Hosting</h3>
-            <ul className="space-y-3 text-[15px] text-gray-700">
+            <h3 className="font-semibold text-[15px] mb-3 text-gray-800">Hosting</h3>
+            <ul className="space-y-2.5 text-[14px] text-gray-700">
               <li className="hover:underline cursor-pointer">Airbnb your home</li>
               <li className="hover:underline cursor-pointer">Airbnb your experience</li>
               <li className="hover:underline cursor-pointer">Airbnb your service</li>
@@ -50,10 +62,9 @@ export default function FooterSection() {
             </ul>
           </div>
 
-          {/* Column 3 */}
           <div>
-            <h3 className="font-semibold text-[16px] text-gray-800 mb-4">Airbnb</h3>
-            <ul className="space-y-3 text-[15px] text-gray-700">
+            <h3 className="font-semibold text-[15px] mb-3 text-gray-800">Airbnb</h3>
+            <ul className="space-y-2.5 text-[14px] text-gray-700">
               <li className="hover:underline cursor-pointer">2025 Summer Release</li>
               <li className="hover:underline cursor-pointer">Newsroom</li>
               <li className="hover:underline cursor-pointer">Careers</li>
@@ -62,7 +73,6 @@ export default function FooterSection() {
               <li className="hover:underline cursor-pointer">Airbnb.org emergency stays</li>
             </ul>
           </div>
-
         </div>
       </div>
     </footer>

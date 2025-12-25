@@ -1,52 +1,88 @@
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
+import PrivacyChoose from "../assets/privacy-choose.svg";
+import FbIcon from "../assets/fb.svg";
+import TwitterIcon from "../assets/twitter.svg";
+import InstagramIcon from "../assets/instagram.svg";
+import  useIsMobile  from "../hooks/useIsMobile";
 
 export default function BottomFooterBar() {
-  return (
-    <div className="w-full bg-white border-t border-gray-200">
-      <div className="max-w-[1300px] mx-auto px-8 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+  const isMobile = useIsMobile();
 
-        {/* Left side */}
-        <div className="flex flex-wrap items-center gap-3 md:gap-4">
+  if (isMobile) {
+    return (
+      <div className="w-full bg-[#F7F7F7] border-t border-gray-200">
+        <div
+          className="
+            max-w-[1300px] mx-auto
+            px-5
+            pt-6
+            pb-[120px]               
+            flex flex-col gap-6
+            text-[13px] text-gray-700
+          "
+        >
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2 cursor-pointer hover:underline">
+              <GlobeAltIcon className="h-4 w-4" />
+              <span>English (US)</span>
+            </div>
+            <span className="cursor-pointer hover:underline">Rp IDR</span>
+          </div>
+
+          <div className="flex items-center gap-5 opacity-90">
+            <img src={FbIcon} alt="Facebook" className="h-4 w-4 cursor-pointer" />
+            <img src={TwitterIcon} alt="Twitter" className="h-4 w-4 cursor-pointer" />
+            <img src={InstagramIcon} alt="Instagram" className="h-4 w-4 cursor-pointer" />
+          </div>
+
+          <span className="text-gray-600">© 2025 Airbnb, Inc.</span>
+
+          <div className="flex flex-wrap items-center gap-4 text-gray-600">
+            <span className="cursor-pointer hover:underline">Privacy</span>
+            <span className="cursor-pointer hover:underline">Terms</span>
+            <span className="flex items-center gap-2 cursor-pointer hover:underline">
+              Your Privacy Choices
+              <img src={PrivacyChoose} alt="privacy" className="w-5 h-3" />
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full bg-[#F7F7F7] border-t border-gray-200">
+      <div
+        className="
+          max-w-[1300px] mx-auto
+          px-8 py-6
+          flex flex-row justify-between items-center
+          text-sm text-gray-600
+        "
+      >
+        <div className="flex items-center gap-3 md:gap-4">
           <span>© 2025 Airbnb, Inc.</span>
-          <span className="hidden md:inline">·</span>
-          <span className="hover:underline cursor-pointer">Privacy</span>
-          <span className="hidden md:inline">·</span>
+          <span>·</span>
+          <span className="hover:underline cursor-pointer text-gray-500">Privacy</span>
+          <span>·</span>
           <span className="hover:underline cursor-pointer">Terms</span>
-          <span className="hidden md:inline">·</span>
-          <span className="hover:underline cursor-pointer">Your Privacy Choices</span>
+          <span>·</span>
+          <span className="flex items-center gap-2 cursor-pointer hover:underline text-gray-500">
+            Your Privacy Choices
+            <img src={PrivacyChoose} alt="Privacy Choices" className="w-6 h-3" />
+          </span>
         </div>
 
-        {/* Right side */}
-        <div className="flex items-center gap-5 mt-4 md:mt-0">
-          {/* Language */}
+        <div className="flex items-center gap-5">
           <div className="flex items-center gap-1 cursor-pointer hover:underline">
             <GlobeAltIcon className="h-4 w-4" />
             <span>English (US)</span>
           </div>
-
-          {/* Currency */}
-          <div className="cursor-pointer hover:underline">
-            Rp IDR
-          </div>
-
-          {/* Icons */}
+          <span className="cursor-pointer hover:underline">Rp IDR</span>
           <div className="flex items-center gap-4">
-            {/* Facebook */}
-            <svg className="h-4 w-4 cursor-pointer" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-            </svg>
-
-            {/* X icon */}
-            <svg className="h-4 w-4 cursor-pointer" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path d="M18 6L6 18M6 6l12 12" />
-            </svg>
-
-            {/* Instagram */}
-            <svg className="h-4 w-4 cursor-pointer" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <rect x="2" y="2" width="20" height="20" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="18" cy="6" r="1" />
-            </svg>
+            <img src={FbIcon} alt="Facebook" className="h-4 w-4 cursor-pointer" />
+            <img src={TwitterIcon} alt="Twitter" className="h-4 w-4 cursor-pointer" />
+            <img src={InstagramIcon} alt="Instagram" className="h-4 w-4 cursor-pointer" />
           </div>
         </div>
       </div>
